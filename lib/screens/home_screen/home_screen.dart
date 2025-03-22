@@ -14,7 +14,13 @@ class HomeScreen extends StatelessWidget {
       appBar: CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(children: [CustomTabBar()]),
+        child: Column(
+          children: [
+            Center(child: CustomTabBar()),
+            SizedBox(height: 30),
+            TotalBreakdown(),
+          ],
+        ),
       ),
     );
   }
