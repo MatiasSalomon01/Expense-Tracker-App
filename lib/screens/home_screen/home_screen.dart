@@ -13,12 +13,13 @@ class HomeScreen extends StatelessWidget {
       drawer: Drawer(),
       appBar: CustomAppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: ListView(
           children: [
+            SizedBox(height: 8),
             Center(child: CustomTabBar()),
             SizedBox(height: 50),
-            SizedBox(height: 200, child: PercentageBarChart()),
+            SizedBox(height: 230, child: PercentageBarChart()),
             SizedBox(height: 15),
             TotalBreakdown(),
             TotalByCategories(),

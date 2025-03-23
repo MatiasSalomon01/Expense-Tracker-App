@@ -14,7 +14,7 @@ class TextMoney extends StatelessWidget {
         text: '\$',
         style: TextStyle(
           color: AppColors.grey,
-          fontSize: 16,
+          fontSize: fontSize - 5,
           fontWeight: FontWeight.w500,
         ),
         children: [

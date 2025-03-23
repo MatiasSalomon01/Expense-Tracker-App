@@ -81,12 +81,12 @@ class TotalByCategories extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        itemBuilder: (context, index) => items[index],
-        separatorBuilder: (context, index) => Container(),
-        itemCount: items.length,
-      ),
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) => items[index],
+      separatorBuilder: (context, index) => Container(),
+      itemCount: items.length,
     );
   }
 }
