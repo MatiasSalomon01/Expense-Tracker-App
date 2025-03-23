@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TextMoney extends StatelessWidget {
-  const TextMoney({super.key, required this.amount, this.fontSize = 20});
+  const TextMoney({
+    super.key,
+    required this.amount,
+    this.fontSize = 20,
+    this.fontSizeDollar,
+  });
 
   final int amount;
   final double fontSize;
+  final double? fontSizeDollar;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class TextMoney extends StatelessWidget {
         text: '\$',
         style: TextStyle(
           color: AppColors.grey,
-          fontSize: fontSize - 5,
+          fontSize: fontSizeDollar ?? fontSize - 5,
           fontWeight: FontWeight.w500,
         ),
         children: [

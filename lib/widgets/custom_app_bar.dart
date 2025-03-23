@@ -1,4 +1,5 @@
 import 'package:expense_tracket_app/constants/constants.dart';
+import 'package:expense_tracket_app/widgets/modal.dart';
 import 'package:expense_tracket_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,7 +15,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actionsPadding: EdgeInsets.zero,
       title: Column(
         children: [
-          // Text('\$32.500', style: TextStyle(fontWeight: FontWeight.bold)),
           TextMoney(amount: 32500),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -30,13 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-
-              builder: (context) => Container(),
-            );
-          },
+          onPressed: () => showModal(context),
           icon: FaIcon(FontAwesomeIcons.plus, size: 20),
         ),
       ],
