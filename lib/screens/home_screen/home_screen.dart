@@ -17,7 +17,9 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Center(child: CustomTabBar()),
-            SizedBox(height: 30),
+            SizedBox(height: 50),
+            SizedBox(height: 200, child: PercentageBarChart()),
+            SizedBox(height: 15),
             TotalBreakdown(),
             TotalByCategories(),
           ],
