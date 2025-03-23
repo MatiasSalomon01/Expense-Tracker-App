@@ -1,4 +1,3 @@
-import 'package:expense_tracket_app/constants/constants.dart';
 import 'package:expense_tracket_app/screens/home_screen/bloc/tab_bloc.dart';
 import 'package:expense_tracket_app/screens/home_screen/widgets/widgets.dart';
 import 'package:expense_tracket_app/widgets/widgets.dart';
@@ -11,7 +10,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
       drawer: Drawer(),
       appBar: CustomAppBar(),
       body: Padding(
@@ -31,18 +29,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: kToolbarHeight,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Icon(Icons.home_outlined),
-            Icon(Icons.apps_rounded),
-            Icon(Icons.bar_chart_rounded),
-            Icon(Icons.person_outline),
-          ],
-        ),
-      ),
+      bottomNavigationBar: CustomBottomNavBar(),
     );
   }
 }

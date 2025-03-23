@@ -1,6 +1,7 @@
 import 'package:expense_tracket_app/constants/constants.dart';
 import 'package:expense_tracket_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -29,8 +30,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.notifications_none_rounded),
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+
+              builder: (context) => Container(),
+            );
+          },
+          icon: FaIcon(FontAwesomeIcons.plus, size: 20),
         ),
       ],
     );
