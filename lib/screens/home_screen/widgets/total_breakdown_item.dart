@@ -1,4 +1,5 @@
 import 'package:expense_tracket_app/constants/constants.dart';
+import 'package:expense_tracket_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class TotalBreakdownItem extends StatelessWidget {
@@ -32,26 +33,7 @@ class TotalBreakdownItem extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            Text.rich(
-              TextSpan(
-                text: '\$',
-                style: TextStyle(
-                  color: AppColors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-                children: [
-                  TextSpan(
-                    text: '$amount',
-                    style: TextStyle(
-                      color: AppColors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            TextMoney(amount: amount),
           ],
         ),
       ),

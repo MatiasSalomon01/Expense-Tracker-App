@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
             Center(child: CustomTabBar()),
             SizedBox(height: 30),
             TotalBreakdown(),
+            TotalByCategories(),
           ],
         ),
       ),
