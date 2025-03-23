@@ -1,7 +1,9 @@
 import 'package:expense_tracket_app/constants/constants.dart';
+import 'package:expense_tracket_app/screens/home_screen/bloc/tab_bloc.dart';
 import 'package:expense_tracket_app/screens/home_screen/widgets/widgets.dart';
 import 'package:expense_tracket_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,16 +16,19 @@ class HomeScreen extends StatelessWidget {
       appBar: CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: ListView(
-          children: [
-            SizedBox(height: 8),
-            Center(child: CustomTabBar()),
-            SizedBox(height: 50),
-            SizedBox(height: 230, child: PercentageBarChart()),
-            SizedBox(height: 15),
-            TotalBreakdown(),
-            TotalByCategories(),
-          ],
+        child: BlocProvider(
+          create: (context) => TabBloc(),
+          child: ListView(
+            children: [
+              SizedBox(height: 8),
+              Center(child: CustomTabBar()),
+              SizedBox(height: 50),
+              SizedBox(height: 230, child: PercentageBarChart()),
+              SizedBox(height: 15),
+              TotalBreakdown(),
+              TotalByCategories(),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: SizedBox(

@@ -3,7 +3,7 @@ import 'package:expense_tracket_app/screens/home_screen/widgets/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-const totalByCategoriesItems = [
+const expensesTotalByCategoriesItems = [
   CategoryListTile(
     icon: Icons.shopping_bag_outlined,
     leadingColor: AppColors.lightGreen,
@@ -27,6 +27,80 @@ const totalByCategoriesItems = [
     subtitle: 'Cash',
     amount: 230,
     percent: 12,
+  ),
+  CategoryListTile(
+    icon: Icons.shopping_bag_outlined,
+    leadingColor: AppColors.lightGreen,
+    title: 'Shopping',
+    subtitle: 'Cash',
+    amount: 498,
+    percent: 32,
+  ),
+  CategoryListTile(
+    icon: Icons.card_giftcard_rounded,
+    leadingColor: AppColors.lightPurple,
+    title: 'Gifts',
+    subtitle: 'Cash • Card',
+    amount: 344,
+    percent: 21,
+  ),
+  CategoryListTile(
+    icon: Icons.local_pizza_outlined,
+    leadingColor: AppColors.lightRed,
+    title: 'Food',
+    subtitle: 'Cash',
+    amount: 230,
+    percent: 12,
+  ),
+  CategoryListTile(
+    icon: Icons.shopping_bag_outlined,
+    leadingColor: AppColors.lightGreen,
+    title: 'Shopping',
+    subtitle: 'Cash',
+    amount: 498,
+    percent: 32,
+  ),
+  CategoryListTile(
+    icon: Icons.card_giftcard_rounded,
+    leadingColor: AppColors.lightPurple,
+    title: 'Gifts',
+    subtitle: 'Cash • Card',
+    amount: 344,
+    percent: 21,
+  ),
+  CategoryListTile(
+    icon: Icons.local_pizza_outlined,
+    leadingColor: AppColors.lightRed,
+    title: 'Food',
+    subtitle: 'Cash',
+    amount: 230,
+    percent: 12,
+  ),
+];
+const incomeTotalByCategoriesItems = [
+  CategoryListTile(
+    icon: Icons.card_giftcard_rounded,
+    leadingColor: AppColors.lightPurple,
+    title: 'Gifts',
+    subtitle: 'Cash',
+    amount: 546,
+    percent: 23,
+  ),
+  CategoryListTile(
+    icon: Icons.shopping_bag_outlined,
+    leadingColor: AppColors.lightGreen,
+    title: 'Shopping',
+    subtitle: 'Card',
+    amount: 312,
+    percent: 12,
+  ),
+  CategoryListTile(
+    icon: Icons.local_pizza_outlined,
+    leadingColor: AppColors.lightRed,
+    title: 'Food',
+    subtitle: 'Card',
+    amount: 120,
+    percent: 43,
   ),
   CategoryListTile(
     icon: Icons.shopping_bag_outlined,
@@ -140,7 +214,9 @@ var incomeBarGroup = [
   ),
   BarChartGroupData(
     x: 2,
-    barRods: [BarChartRodData(toY: 4, color: AppColors.lightYellow, width: 18)],
+    barRods: [
+      BarChartRodData(toY: 13, color: AppColors.lightYellow, width: 18),
+    ],
     showingTooltipIndicators: [0],
   ),
   BarChartGroupData(
@@ -158,18 +234,18 @@ var incomeBarGroup = [
   BarChartGroupData(
     x: 5,
     barRods: [
-      BarChartRodData(toY: 5, color: AppColors.lightTurquoise, width: 18),
+      BarChartRodData(toY: 8, color: AppColors.lightTurquoise, width: 18),
     ],
     showingTooltipIndicators: [0],
   ),
   BarChartGroupData(
     x: 6,
-    barRods: [BarChartRodData(toY: 10, color: AppColors.lightPink, width: 18)],
+    barRods: [BarChartRodData(toY: 16, color: AppColors.lightPink, width: 18)],
     showingTooltipIndicators: [0],
   ),
   BarChartGroupData(
     x: 7,
-    barRods: [BarChartRodData(toY: 4, color: AppColors.lightOrange, width: 18)],
+    barRods: [BarChartRodData(toY: 6, color: AppColors.lightOrange, width: 18)],
     showingTooltipIndicators: [0],
   ),
 ];

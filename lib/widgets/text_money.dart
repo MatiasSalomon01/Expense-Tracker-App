@@ -1,5 +1,6 @@
 import 'package:expense_tracket_app/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TextMoney extends StatelessWidget {
   const TextMoney({super.key, required this.amount, this.fontSize = 20});
@@ -9,6 +10,8 @@ class TextMoney extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formato = NumberFormat("#,###", "en_EN");
+
     return Text.rich(
       TextSpan(
         text: '\$',
@@ -19,7 +22,7 @@ class TextMoney extends StatelessWidget {
         ),
         children: [
           TextSpan(
-            text: '$amount',
+            text: formato.format(amount),
             style: TextStyle(
               color: AppColors.black,
               fontSize: fontSize,

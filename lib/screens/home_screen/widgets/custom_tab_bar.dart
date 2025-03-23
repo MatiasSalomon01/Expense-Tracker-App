@@ -1,5 +1,7 @@
 import 'package:expense_tracket_app/constants/constants.dart';
+import 'package:expense_tracket_app/screens/home_screen/bloc/tab_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({super.key});
@@ -26,6 +28,8 @@ class _CustomTabBarState extends State<CustomTabBar>
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<TabBloc>();
+
     return Container(
       padding: EdgeInsets.all(6),
       decoration: BoxDecoration(
@@ -46,6 +50,7 @@ class _CustomTabBarState extends State<CustomTabBar>
         unselectedLabelColor: AppColors.black,
         overlayColor: WidgetStatePropertyAll(Colors.transparent),
         tabs: [Text('Expenses'), Text('Income')],
+        onTap: (value) => bloc.add(ChangeTabEvent(index: value)),
       ),
     );
   }

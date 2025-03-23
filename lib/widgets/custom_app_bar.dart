@@ -1,4 +1,5 @@
 import 'package:expense_tracket_app/constants/constants.dart';
+import 'package:expense_tracket_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,7 +13,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actionsPadding: EdgeInsets.zero,
       title: Column(
         children: [
-          Text('\$32.500', style: TextStyle(fontWeight: FontWeight.bold)),
+          // Text('\$32.500', style: TextStyle(fontWeight: FontWeight.bold)),
+          TextMoney(amount: 32500),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
