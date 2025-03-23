@@ -23,6 +23,18 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: SizedBox(
+        height: kToolbarHeight,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Icon(Icons.home_outlined),
+            Icon(Icons.apps_rounded),
+            Icon(Icons.bar_chart_rounded),
+            Icon(Icons.person_outline),
+          ],
+        ),
+      ),
     );
   }
 }
