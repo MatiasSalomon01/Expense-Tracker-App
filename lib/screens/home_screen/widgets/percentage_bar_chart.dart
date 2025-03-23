@@ -1,4 +1,5 @@
 import 'package:expense_tracket_app/constants/constants.dart';
+import 'package:expense_tracket_app/constants/data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,6 @@ class PercentageBarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return BarChart(
       BarChartData(
-        // maxY: 32,
         titlesData: FlTitlesData(
           show: true,
           leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
@@ -25,81 +25,19 @@ class PercentageBarChart extends StatelessWidget {
         ),
         borderData: FlBorderData(show: false),
         gridData: FlGridData(show: false),
-
         barTouchData: BarTouchData(
           touchTooltipData: BarTouchTooltipData(
             getTooltipColor: (_) => Colors.transparent,
             tooltipPadding: EdgeInsets.zero,
             tooltipMargin: 8,
             getTooltipItem:
-                (group, groupIndex, rod, rodIndex) => BarTooltipItem(
+                (_, _, rod, _) => BarTooltipItem(
                   '${rod.toY.toInt().toString()}%',
                   TextStyle(fontWeight: FontWeight.bold),
                 ),
           ),
         ),
-        barGroups: [
-          BarChartGroupData(
-            x: 0,
-            barRods: [
-              BarChartRodData(toY: 12, color: AppColors.lightRed, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 1,
-            barRods: [
-              BarChartRodData(toY: 7, color: AppColors.lightBlue, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 2,
-            barRods: [
-              BarChartRodData(toY: 15, color: AppColors.lightYellow, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 3,
-            barRods: [
-              BarChartRodData(toY: 32, color: AppColors.lightGreen, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 4,
-            barRods: [
-              BarChartRodData(toY: 21, color: AppColors.lightPurple, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 5,
-            barRods: [
-              BarChartRodData(
-                toY: 7,
-                color: AppColors.lightTurquoise,
-                width: 18,
-              ),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 6,
-            barRods: [
-              BarChartRodData(toY: 13, color: AppColors.lightPink, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-          BarChartGroupData(
-            x: 7,
-            barRods: [
-              BarChartRodData(toY: 5, color: AppColors.lightOrange, width: 18),
-            ],
-            showingTooltipIndicators: [0],
-          ),
-        ],
+        barGroups: expensesBarGroup,
       ),
     );
   }
