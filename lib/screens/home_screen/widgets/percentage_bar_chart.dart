@@ -10,8 +10,7 @@ class PercentageBarChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<TabBloc, TabState>(
-      listener: (_, _) {},
+    return BlocBuilder<TabBloc, TabState>(
       builder: (context, state) {
         return BarChart(
           BarChartData(
